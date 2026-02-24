@@ -1,14 +1,15 @@
 def process_payment(amount):
     print("Processing payment...")
 
-    if amount > 500:
+    discount = 0
+    if amount > 100:
         discount = amount * 0.1
-    else:
-        discount = 0
+    if amount > 500:
+        discount = amount * 0.2
 
     final_amount = amount - discount
 
-    # Complex logic
+    fee = 0
     if final_amount > 1000:
         fee = final_amount * 0.05
     elif final_amount > 500:
@@ -18,6 +19,5 @@ def process_payment(amount):
 
     total = final_amount + fee
 
-    print("Total payment:", total)
-
+    print("Total:", total)
     return total
